@@ -11,7 +11,9 @@ Usamos un diccionario para guardar los nodos y sus conexiones. Es la forma más 
     - `vertex_degree`: Cuenta cuántas conexiones salen de un nodo.
     - `is_multigraph`: Detecta si hay lazos o conexiones duplicadas.
     - `is_complete`: Verifica si cada nodo conecta con todos los demás.
-
+    
+## Como nos fue
+La lista de adyacencia con diccionario nos resultó simple de armar y de recorrer, y no tuvimos mayor problema con los puntos obligatorios. 
 ## Ejecución
 Solo abre tu terminal en la carpeta y escribe:
 ```bash

@@ -71,3 +71,37 @@ class Graph:
                 return False
 
         return True
+    
+    def is_connected(self):
+
+        if not self.graph:
+            return True
+
+        # armamos un grafo "no dirigido" temporal, ignorando las flechas
+        undirected = {}
+
+        for vertex in self.graph:
+            undirected[vertex] = set()
+
+        for source in self.graph:
+            for target, weight in self.graph[source]:
+                undirected[source].add(target)
+                undirected[target].add(source)
+
+        # recorrido tipo BFS desde un nodo cualquiera
+        start = next(iter(self.graph))
+        visited = set()
+        queue = [start]
+
+        while queue:
+            current = queue.pop(0)
+
+            if current not in visited:
+                visited.add(current)
+
+                for neighbor in undirected[current]:
+                    if neighbor not in visited:
+                        queue.append(neighbor)
+
+        # si visitamos todos los nodos, es conexo
+        return len(visited) == len(self.graph)

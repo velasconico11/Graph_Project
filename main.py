@@ -16,3 +16,6 @@ print(g.is_multigraph())
 
 print("\nIS COMPLETE?")
 print(g.is_complete())
+
+print("\nIS CONNECTED?")
+print(g.is_connected())
